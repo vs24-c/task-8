@@ -1,0 +1,49 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: rgba(243, 239, 239, 0.486);
+}
+.header__logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    transition: color 0.3s ease;
+    color: brown;
+    text-decoration: underline;
+  }
+}
+.header__menu {
+  & ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    & li {
+      list-style-type: none;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #666;
+      transition: color 0.3s ease;
+
+      & a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          color: brown;
+        }
+      }
+    }
+    & li:hover {
+      transition: color 0.3s ease;
+      color: brown;
+    }
+  }
+}

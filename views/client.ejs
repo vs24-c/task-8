@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Owners List</title>
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel='stylesheet' href='/stylesheets/client.css' />
+  </head>
+  <body>
+    <%- include('./parts/header.ejs') %>
+    <div class="wrapper">
+      <main class="page">
+        <div class="page__container">
+          <div class="page__list">
+          <h1>Client</h1>
+          <div class="client-data">
+  <div class="client-data__row">
+    <span class="client-data__label">Name:</span>
+    <span class="client-data__value"><%= owner?.name %></span>
+  </div>
+  <div class="client-data__row">
+    <span class="client-data__label">Surname:</span>
+    <span class="client-data__value"><%= owner?.surname %></span>
+  </div>
+  <div class="client-data__row">
+    <span class="client-data__label">City:</span>
+    <span class="client-data__value"><%= owner?.address %></span>
+  </div>
+  <div class="client-data__row">
+    <span class="client-data__label">Age:</span>
+    <span class="client-data__value"><%= owner?.details?.age %></span>
+  </div>
+  <div class="client-data__row">
+    <span class="client-data__label">Profession:</span>
+    <span class="client-data__value"><%= owner?.details?.profession %></span>
+  </div>
+  <div class="client-data__row">
+    <span class="client-data__label">Description:</span>
+    <span class="client-data__value"><%= owner?.details?.descriptio %></span>
+  </div>
+</div>
+
+              </div>
+        </div>
+      </main>
+    </div>
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Owners List</title>
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel='stylesheet' href='/stylesheets/owners.css' />
+  </head>
+  <body>
+    <%- include('./parts/header.ejs') %>
+    <div class="wrapper">
+      <main class="page">
+        <div class="page__container">
+          <div class="page__list">
+          <h1>Owners List</h1>
+        <form action="/owners" method="get" class="form__search">
+          <label class="form__search-group"><input type="text" name="name" placeholder="Search Name"></label>
+          <label class="form__search-group"><input type="text" name="address" placeholder="Search Adress"></label>
+          <button class="form__search-btn" type="submit">Search</button>
+          <a class="form__btn" href="/owners">Reset</a>
+        </form>
+           <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>City</th>
+                    <th>Edit Button</th>
+                    <th>Delete Button</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% owners.forEach(user => { %>
+                  <tr>
+                    <td><%= user?.id %></td>
+                    <td><a href="/owners/client/<%= user.id %>"><%= user?.fullName %></a></td>
+                    <td><%= user?.address %></td>
+                    <td><a class ="edit form__btn" href="/owners/add/<%= user.id %>">Edit</a></td>
+                    <td><button data-id="<%= user?.id %>" class="delete form__btn" type="button">Delete</button></td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+              </div>
+        </div>
+      </main>
+    </div>
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
